@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Billie Eilish | Essência Sombria e Inovação</title>
+    <!-- Estilo único, inspirado na estética etérea e neo-gótica de Billie -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 30%, #0a0f1a, #03050a);
+            font-family: 'Segoe UI', 'Poppins', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            color: #ece9f0;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Scroll personalizado - vibe sombria e neon */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12121c;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5f5b9b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a78bfa;
+        }
+
+        /* container principal */
+        .billie-world {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            position: relative;
+        }
+
+        /* efeito de névoa / brilho atrás */
+        .billie-world::before {
+            content: "";
+            position: fixed;
+            top: -30%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(ellipse at 30% 40%, rgba(60, 50, 110, 0.15), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* cabeçalho dramático */
+        .hero-section {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px dashed rgba(167, 139, 250, 0.4);
+            padding-bottom: 2rem;
+        }
+
+        .hero-section h1 {
+            font-size: clamp(3rem, 12vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff, #c7b9ff, #9b87f5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px rgba(155, 135, 245, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #bcb6e0;
+            letter-spacing: 1px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* grade de conteúdo principal - estilo mosaico assimétrico */
+        .grid-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-bio {
+            flex: 2;
+            min-width: 260px;
+            background: rgba(15, 18, 30, 0.65);
+            backdrop-filter: blur(10px);
+            border-radius: 3rem 1.5rem 3rem 1.5rem;
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            padding: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+            transition: transform 0.25s ease, border-color 0.2s;
+        }
+
+        .card-bio:hover {
+            transform: translateY(-6px);
+            border-color: #a78bfa;
+            box-shadow: 0 25px 40px -12px #a78bfa20;
+        }
+
+        .card-bio h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+            border-left: 5px solid #b794f4;
+            padding-left: 1rem;
+        }
+
+        .bio-text {
+            font-size: 1rem;
+            color: #dfdaf5;
+            margin: 1.2rem 0;
+            text-align: justify;
+        }
+
+        .highlight-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            background: #12121cd9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 0.5px solid #7f6bc0;
+            backdrop-filter: blur(4px);
+        }
+
+        /* card da imagem / destaque visual */
+        .card-visual {
+            flex: 1.2;
+            min-width: 260px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 2rem;
+            backdrop-filter: blur(4px);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2d264f;
+            transition: all 0.2s;
+        }
+
+        .image-frame {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px black;
+            border: 2px solid rgba(185, 157, 255, 0.6);
+            transition: 0.2s;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .image-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .quote {
+            margin-top: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            font-size: 0.95rem;
+            background: #0a0c16b3;
+            padding: 0.8rem;
+            border-radius: 2rem;
+            border-left: 4px solid #b794f4;
+            width: 100%;
+        }
+
+        /* discografia estilo cards flutuantes */
+        .discography {
+            margin: 3rem 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .discography h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .discography h3:before {
+            content: "🎧";
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 4px #b794f4);
+        }
+
+        .album-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .album-card {
+            background: rgba(25, 28, 45, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 1.8rem;
+            padding: 1.2rem;
+            width: 180px;
+            text-align: center;
+            transition: all 0.25s;
+            border: 1px solid #3a2f66;
+            cursor: default;
+        }
+
+        .album-card:hover {
+            transform: scale(1.03);
+            background: #1f1c36cc;
+            border-color: #c4b5fd;
+            box-shadow: 0 10px 20px -5px #a78bfa40;
+        }
+
+        .album-cover {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .album-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .album-year {
+            font-size: 0.75rem;
+            color: #b7adf0;
+            margin-top: 0.3rem;
+        }
+
+        /* curiosidades / estilo de grade flex */
+        .fun-facts {
+            background: linear-gradient(145deg, #0b0e18, #05070f);
+            border-radius: 2rem;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border: 1px solid #3d3370;
+        }
+
+        .fun-facts h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .facts-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .facts-list li {
+            background: #0000004d;
+            padding: 0.7rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            border-left: 3px solid #a78bfa;
+            flex: 1 1 200px;
+        }
+
+        /* rodapé com assinatura e links simbólicos */
+        .footer-mystic {
+            margin-top: 3rem;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2c274f;
+            font-size: 0.8rem;
+            color: #8e86b5;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-mystic span {
+            opacity: 0.8;
+        }
+
+        .glow-icon {
+            filter: drop-shadow(0 0 6px #b794f4);
+        }
+
+        /* responsividade */
+        @media (max-width: 750px) {
+            .billie-world {
+                padding: 1rem;
+            }
+            .card-bio, .card-visual {
+                flex: 1 1 100%;
+            }
+            .album-card {
+                width: 150px;
+            }
+            .hero-section h1 {
+                font-size: 3.4rem;
+            }
+        }
+
+        /* botão/efeito extra (apenas decoração) */
+        .ethereal-btn {
+            background: none;
+            border: 1px solid #a78bfa;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            color: #d9ceff;
+            font-size: 0.7rem;
+            cursor: default;
+            transition: 0.2s;
+        }
+        .ethereal-btn:hover {
+            background: #a78bfa20;
+        }
+    </style>
+</head>
+<body>
+    <div class="billie-world">
+        <div class="hero-section">
+            <h1>BILLIE EILISH</h1>
+            <div class="tagline">“voz que ecoa no silêncio, alma que colore o escuro”</div>
+            <div style="margin-top: 12px;"><span class="ethereal-btn">✦ PIRATEIRA DE EMOÇÕES ✦</span></div>
+        </div>
+
+        <div class="grid-content">
+            <!-- BIOGRAFIA E ESTILO -->
+            <div class="card-bio">
+                <h2>🌊 essência</h2>
+                <div class="bio-text">
+                    Billie Eilish Pirate Baird O'Connell — fenômeno global, voz que redefiniu o pop alternativo. 
+                    Nascida em Los Angeles, 2001, ela transforma vulnerabilidade em arte. Com apenas 13 anos, 
+                    ganhou o mundo com "Ocean Eyes". Seu álbum de estreia "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?" 
+                    quebrou barreiras e venceu 5 GRAMMYs® incluindo Álbum do Ano. Estética oversized, sussurros 
+                    sombrios e produção minimalista ao lado do irmão Finneas são suas marcas registradas. 
+                    Billie não canta apenas melodias — ela sussurra verdades universais.
+                </div>
+                <div class="highlight-stats">
+                    <div class="stat">🎤 7 Grammy Awards</div>
+                    <div class="stat">💿 2 Álbuns #1 Billboard</div>
+                    <div class="stat">🌍 +100M discos vendidos</div>
+                    <div class="stat">🎬 Oscar 2024 (What Was I Made For?)</div>
+                </div>
+            </div>
+
+            <!-- VISUAL + IMAGEM SIMBÓLICA (Billie) -->
+            <div class="card-visual">
+                <div class="image-frame">
+                    <!-- Imagem ilustrativa SVG / estética minimalista, representando Billie Eilish com referência visual -->
+                    <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#0f0f1c; border-radius: 1.8rem;">
+                        <circle cx="150" cy="120" r="48" fill="#2d264f" stroke="#b794f4" stroke-width="2"/>
+                        <path d="M115 165 Q150 195 185 165" stroke="#c9b6ff" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <rect x="125" y="105" width="12" height="12" rx="6" fill="#e3d5ff" />
+                        <rect x="163" y="105" width="12" height="12" rx="6" fill="#e3d5ff" />
+                        <path d="M130 140 L170 140" stroke="#a78bfa" stroke-width="2" stroke-dasharray="4 2"/>
+                        <path d="M95 210 L205 210 L215 260 L85 260 L95 210Z" fill="#18162e" stroke="#a78bfa" stroke-width="1.5"/>
+                        <path d="M120 230 L140 225 L150 240 L160 225 L180 230" stroke="#b794f4" fill="none" stroke-width="2"/>
+                        <circle cx="250" cy="50" r="12" fill="#6f5fb0" opacity="0.6"/>
+                        <circle cx="40" cy="270" r="8" fill="#7f6bc0" opacity="0.5"/>
+                        <text x="105" y="285" fill="#bcadff" font-size="10" font-weight="bold">BILLIE</text>
+                    </svg>
+                </div>
+                <div class="quote">
+                    “Eu não faço música para os olhos, faço para o peito que dói.”<br>
+                    <span style="font-size: 0.7rem;">— Billie Eilish</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISCOS OFICIAIS - ESTILO ÚNICO -->
+        <div class="discography">
+            <h3>discografia essencial</h3>
+            <div class="album-grid">
+                <div class="album-card">
+                    <div class="album-cover">💿🌊</div>
+                    <div class="album-name">WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?</div>
+                    <div class="album-year">2019 · 5x Platina</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">🎸🪶</div>
+                    <div class="album-name">Happier Than Ever</div>
+                    <div class="album-year">2021 · Álbum do Ano (Grammy)</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">🍃🎹</div>
+                    <div class="album-name">Guitar Songs (EP)</div>
+                    <div class="album-year">2022 · “TV” / “The 30th”</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">✨🎬</div>
+                    <div class="album-name">Barbie (What Was I Made For?)</div>
+                    <div class="album-year">2023 · Oscar + Globo de Ouro</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">🔥🖤</div>
+                    <div class="album-name">HIT ME HARD AND SOFT</div>
+                    <div class="album-year">2024 · Aclamação crítica</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FATOS INTERESSANTES / CURIOSIDADES -->
+        <div class="fun-facts">
+            <h3>✨ curiosidades & legado ✨</h3>
+            <ul class="facts-list">
+                <li>🔮 Billie escreveu “Ocean Eyes” originalmente para sua aula de dança.</li>
+                <li>🖤 Ela é a artista mais jovem a vencer os 4 principais categorias do Grammy na mesma noite (2020).</li>
+                <li>💚 Seu cabelo verde neon se tornou um ícone mundial da rebeldia sustentável.</li>
+                <li>🌱 Vegana e ativista climática, Billie já mobilizou shows com energia 100% renovável.</li>
+                <li>🎙️ Todos os álbuns são produzidos com Finneas no home studio dos pais.</li>
+                <li>🏆 Em 2024, venceu o Oscar de Melhor Canção Original por “What Was I Made For?”.</li>
+            </ul>
+        </div>
+
+        <!-- INFORMAÇÕES EXTRAS E INFLUÊNCIAS (estilo diferente) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1rem 0; justify-content: space-between;">
+            <div style="flex:1; background: #0709127a; border-radius: 1.5rem; padding: 1.2rem; border-right: 2px solid #4b3b86;">
+                <h4 style="display: flex; gap: 0.5rem; margin-bottom: 0.8rem;">🎙️ influências únicas</h4>
+                <p style="font-size: 0.9rem;">Lana Del Rey, Tyler, The Creator, Avril Lavigne, The Beatles. Billie mescla o alternativo com hip-hop e dark pop. Sua estética é inspirada no surrealismo e moda genderless.</p>
+            </div>
+            <div style="flex:1; background: #0709127a; border-radius: 1.5rem; padding: 1.2rem; border-left: 2px solid #4b3b86;">
+                <h4 style="display: flex; gap: 0.5rem; margin-bottom: 0.8rem;">🏆 conquistas recentes</h4>
+                <p style="font-size: 0.9rem;">Em 2025, Billie se tornou a cantora mais jovem a liderar o Lollapalooza como headliner em duas noites. Seu documentário "The World's a Little Blurry" continua a inspirar fãs.</p>
+            </div>
+        </div>
+
+        <!-- rodapé com identidade visual e citação final -->
+        <div class="footer-mystic">
+            <span>✦ fanpage imersiva • estilo "Billie Eilish" — ousadia, melancolia e autenticidade ✦</span>
+            <span>🎧 “I'm the bad guy? ... Duh.”</span>
+        </div>
+    </div>
+
+    <!-- pequeno script apenas para efeito de console e interação sutil (não interfere) -->
+    <script>
+        // apenas um toque interativo leve para manter a atmosfera, sem quebrar a copia/cola.
+        console.log("%c🌀 BILLIE EILISH — ESSÊNCIA SONORA 🌀", "color: #b794f4; font-size: 16px; font-weight: bold;");
+        // efeito de pequena animação de título opcional (puramente estético)
+        const title = document.querySelector('.hero-section h1');
+        if(title) {
+            title.addEventListener('mouseenter', () => {
+                title.style.transition = 'text-shadow 0.2s';
+                title.style.textShadow = '0 0 12px #a78bfa';
+            });
+            title.addEventListener('mouseleave', () => {
+                title.style.textShadow = '0 0 8px rgba(155, 135, 245, 0.3)';
+            });
+        }
+    </script>
+</body>
+</html>
